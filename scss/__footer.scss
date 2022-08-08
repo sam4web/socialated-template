@@ -1,0 +1,107 @@
+.footer {
+  // background-color: #fff5f3;
+  background: $gradient;
+
+  .section-container {
+    @include grid(35px);
+    grid-template-columns: 0.9fr 0.7fr 0.8fr;
+    text-align: left;
+
+    @include responsive_large {
+      grid-template-columns: repeat(2, 1fr);
+
+      .footer-links-container {
+        order: 2;
+      }
+    }
+
+    @include responsive_small {
+      grid-template-columns: 1fr;
+    }
+
+    h3 {
+      font-size: 28px;
+      line-height: 33.6px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &-info {
+    p {
+      line-height: 27px;
+      margin-top: 30px;
+      margin-bottom: 18px;
+    }
+
+    .social-list {
+      li {
+        display: inline-block;
+        padding: 0 5px;
+
+        a {
+          @include flex(center, center);
+          width: 40px;
+          height: 40px;
+          background-color: $white;
+          border-radius: 40px;
+
+          i {
+            color: $sec_clr;
+            font-size: 17px;
+            transition: 100ms all linear;
+          }
+
+          &:hover i {
+            color: $pri_clr;
+          }
+        }
+      }
+    }
+  }
+
+  &-links-container {
+    @include flex(space-between, flex-start);
+  }
+
+  &-links {
+    li {
+      font-weight: 400;
+      line-height: 32px;
+
+      a {
+        color: $sec_clr;
+        transition: 100ms all linear;
+
+        &:hover {
+          color: $pri_clr;
+        }
+      }
+    }
+  }
+
+  .subscription {
+    .input-container {
+      @include flex(flex-start, strech);
+      max-width: 300px;
+
+      input {
+        padding: 10px 8px;
+        flex-grow: 1;
+        outline: none;
+        border-radius: 0;
+        border: 1px solid transparent;
+
+        &:focus {
+          border-color: $black;
+        }
+      }
+
+      button {
+        border: none;
+        width: 50px;
+        background-color: $pri_clr;
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,184 @@
+// .active
+.header {
+  width: 100%;
+
+  // container
+  .section-container {
+    @include flex();
+    text-align: left;
+    padding: 25px 15px;
+  }
+
+  .logo img {
+    @include responsive_large {
+      width: 250px;
+    }
+
+    @include responsive_small {
+      width: 200px;
+    }
+  }
+
+  .nav {
+    @include responsive_medium {
+      display: none;
+    }
+
+    &-list {
+      @include flex();
+      transition: inherit;
+    }
+
+    &-item {
+      margin: 0 3px;
+      margin-bottom: 7px;
+    }
+
+    &-link {
+      color: $sec_clr;
+      font-weight: 800;
+      padding: 1rem 0.85rem;
+      transition: 200ms all ease-out;
+
+      @include responsive_large {
+        font-size: 16px;
+        font-weight: 700;
+        padding: 0.5rem 0.45rem;
+      }
+
+      &:hover {
+        color: $pri_clr;
+      }
+    }
+  }
+
+  .toggle-btn {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+
+    @include responsive_medium {
+      display: block;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: $sec_clr;
+      border-radius: 70px;
+      position: relative;
+      transition: 150ms transform linear, 100ms color linear;
+
+      &::before,
+      &::after {
+        content: '';
+        width: inherit;
+        height: inherit;
+        background-color: inherit;
+        position: absolute;
+        border-radius: inherit;
+        transition: inherit;
+      }
+
+      &::before {
+        top: -7.7px;
+      }
+
+      &::after {
+        top: 7.7px;
+      }
+    }
+  }
+}
+
+// toggle active
+.toggle-active {
+  .section-container {
+    display: block;
+  }
+
+  .toggle-btn .bar {
+    transform: rotate(135deg);
+    background-color: $pri_clr;
+
+    &::before {
+      top: 0px;
+      transform: rotate(90deg);
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .nav {
+    display: block;
+    animation: show-navbar 200ms linear forwards;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2.5px;
+      bottom: -15px;
+      left: 0;
+      border-radius: 70px;
+      background-color: $pri_clr;
+      animation: show-navbar-after 200ms 200ms linear forwards;
+    }
+
+    &-list {
+      padding-top: 20px;
+      display: block;
+    }
+  }
+}
+
+// scroll active
+.scroll-active {
+  z-index: 100;
+  top: 0;
+  position: fixed;
+  background: $gradient;
+  animation: scroll-active 350ms ease-in-out forwards;
+
+  .section-container {
+    padding: 13px;
+  }
+
+  .toggle-btn {
+    top: 32px;
+  }
+}
+
+@keyframes show-navbar {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show-navbar-after {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes scroll-active {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

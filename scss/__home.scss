@@ -1,0 +1,466 @@
+// styles for home page
+// hero start
+.hero {
+  margin-top: 35px;
+
+  .section-container {
+    text-align: left;
+    @include grid(50px);
+    grid-template-columns: repeat(2, 1fr);
+
+    @include responsive_medium {
+      grid-template-columns: 1fr;
+
+      .image-container {
+        order: -1;
+        @include grid(0, center, center);
+
+        img {
+          width: 500px;
+        }
+      }
+    }
+  }
+
+  .content-container {
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include responsive_medium {
+      text-align: center;
+    }
+  }
+
+  .button-container {
+    margin-top: 40px;
+
+    @include responsive_large {
+      margin-top: 20px;
+    }
+
+    @include responsive_small {
+      max-width: 200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .button {
+      @include responsive_small {
+        width: 100%;
+      }
+
+      &:first-child {
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+
+      @include responsive_large {
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .section-title {
+    font-size: 48px;
+    line-height: 76px;
+    margin-bottom: 30px;
+
+    span {
+      display: block;
+    }
+
+    @include responsive_large {
+      font-size: 35px;
+      line-height: 46px;
+      margin-bottom: 17px;
+    }
+
+    @include responsive_medium {
+      span {
+        display: inline-block;
+      }
+    }
+  }
+}
+// hero end
+
+// service start
+.services {
+  margin-bottom: 25px;
+
+  .service-container {
+    @include flex(center, center);
+    flex-wrap: wrap;
+    margin: 45px 0;
+  }
+
+  .service-item {
+    max-width: 350px;
+    padding: 0 15px;
+    margin: 20px auto;
+
+    h3 {
+      margin-top: 45px;
+      font-size: 28px;
+      line-height: 33.6px;
+      color: $sec_clr;
+    }
+
+    p {
+      margin-top: 25px;
+      line-height: 27px;
+    }
+  }
+}
+// service end
+
+// banner start
+.banner {
+  .section-container {
+    @include grid(40px, center, center);
+    text-align: left;
+
+    .section-subtitle {
+      margin-bottom: 25px;
+    }
+
+    @include responsive_medium {
+      grid-template-columns: 1fr !important;
+
+      .image-container {
+        order: -1;
+        @include grid(0, center, center);
+
+        img {
+          width: 500px;
+        }
+      }
+
+      .content-container {
+        max-width: 550px;
+        margin: 0 auto;
+        text-align: center;
+
+        .section-title,
+        .section-subtitle {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.banner-01 {
+  background: $gradient;
+  .section-container {
+    grid-template-columns: 1.5fr 2fr;
+  }
+}
+
+.banner-02 {
+  .section-container {
+    grid-template-columns: 2fr 1.5fr;
+  }
+  .content-container {
+    order: -1;
+  }
+}
+// banner end
+
+// counter start
+.counter {
+  .section-container {
+    @include grid(35px);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .counter-container {
+    justify-self: center;
+    background: $gradient;
+    padding: 40px 30px;
+    border-radius: 35px;
+    padding-top: 45px;
+    max-width: 250px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+
+    .counter-count {
+      display: inline-block;
+      color: $sec_clr;
+      font-size: 57px;
+      font-family: inherit;
+      font-weight: 700;
+      line-height: 85.5px;
+      margin-bottom: 10px;
+      position: relative;
+
+      &::before {
+        content: '+';
+        position: absolute;
+        top: -45px;
+        right: -28px;
+      }
+    }
+
+    .counter-title {
+      font-size: 28px;
+      line-height: 33.6px;
+    }
+  }
+}
+// counter end
+
+// brand start
+.brand {
+  background: $gradient;
+
+  .section-container {
+    padding: 65px 15px;
+  }
+
+  .brand-container {
+    padding-top: 40px;
+
+    &:active {
+      cursor: grab;
+    }
+
+    img {
+      width: 200px;
+    }
+  }
+}
+// brand end
+
+// pricing start
+.pricing {
+  .pricing-container {
+    @include grid(45px, center, center);
+    grid-template-columns: repeat(auto-fit, 350px);
+    margin-top: 55px;
+  }
+
+  .option {
+    // width: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 45px;
+    padding-top: 65px !important;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    @include responsive_medium {
+      padding: 25px;
+    }
+
+    .label {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $pri_clr;
+      padding: 0 40px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+
+      h3 {
+        line-height: 22px;
+        color: $white;
+        font-size: 18px;
+      }
+    }
+
+    h3 {
+      font-size: 22px;
+      line-height: 38px;
+      margin: 10px 0;
+    }
+
+    &-title {
+      margin-top: 20px !important;
+      color: $pri_clr;
+    }
+
+    .price {
+      max-width: 100px;
+      margin: 0 auto;
+      font-size: 64px;
+      font-weight: 300;
+      line-height: 76.8px;
+      position: relative;
+
+      &::before,
+      &::after {
+        font-size: 24px;
+        position: absolute;
+      }
+
+      &::before {
+        content: '$';
+        top: -27px;
+        left: -6px;
+      }
+
+      &::after {
+        content: '/ mo';
+        top: 21px;
+        right: -35px;
+      }
+    }
+
+    .feature-list {
+      margin-bottom: 30px;
+      text-align: left;
+
+      .feature-item {
+        font-weight: 500;
+        line-height: 32px;
+
+        &::before {
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          font-size: 22px;
+          margin-right: 8px;
+        }
+      }
+
+      .on-option::before {
+        content: '\f058';
+        color: $pri_clr;
+      }
+
+      .off-option::before {
+        content: '\f057';
+        color: $sec_clr;
+      }
+    }
+  }
+}
+// pricing end
+
+// portfolio start
+.portfolio {
+  .portfolio-container {
+    @include grid(15px, center, center);
+    margin: 40px auto;
+    grid-template-areas:
+      'item-one item-four item-three'
+      'item-two item-four item-three';
+
+    @include responsive_large {
+      grid-template-areas:
+        'item-one item-three'
+        'item-two item-three'
+        'item-four item-four';
+    }
+
+    @include responsive_small {
+      gap: 10px;
+    }
+  }
+
+  #portfolio-item-1 {
+    grid-area: item-one;
+  }
+  #portfolio-item-2 {
+    grid-area: item-two;
+  }
+  #portfolio-item-3 {
+    grid-area: item-three;
+  }
+  #portfolio-item-4 {
+    grid-area: item-four;
+  }
+}
+// portfolio end
+
+// contact start
+.contact {
+  .contact-container {
+    margin: 50px auto;
+    @include grid(40px, center, center);
+    grid-template-columns: repeat(2, 1fr);
+
+    @include responsive_medium {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  form .button {
+    padding: 15px 20px;
+    max-width: 180px;
+  }
+
+  .form-container {
+    @include grid(20px, center, center);
+    margin-bottom: 20px;
+    grid-auto-rows: min-content;
+    grid-template-areas:
+      'name email'
+      'subject phone'
+      'message message';
+
+    @include responsive_medium {
+      max-width: 350px;
+      width: 100%;
+      margin: 0 auto;
+      grid-template-areas:
+        'name'
+        'email'
+        'subject'
+        'phone'
+        'message';
+    }
+    grid-template-columns: 1fr;
+  }
+
+  .input-container {
+    width: 100%;
+    position: relative;
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #828f99;
+      background-color: $white;
+      padding: 0 5px;
+      position: absolute;
+      top: -12px;
+      left: 20px;
+    }
+
+    input,
+    textarea {
+      border: 1.5px solid #ced4da;
+      border-radius: 10px;
+      padding: 10px 20px;
+      outline: none;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 160px;
+    }
+  }
+
+  #name-container {
+    grid-area: name;
+  }
+  #email-container {
+    grid-area: email;
+  }
+  #subject-container {
+    grid-area: subject;
+  }
+  #phone-container {
+    grid-area: phone;
+  }
+  #message-container {
+    grid-area: message;
+  }
+}
+// contact end
