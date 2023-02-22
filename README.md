@@ -1,12 +1,21 @@
 ## Socialated
 
-[Live site](https://sam4web.github.io/socialated-template/)
-[![project preview](./project-preview.png)](https://sam4web.github.io/socialated-template/)
+![project preview](./project-preview.png)
 
-### This website includes & uses:
+### View:
+- [Live site](https://sam4web.github.io/socialated-template/) (Github Pages)
+- [Source Code](https://github.com/sam4web/socialated-template/) (Github)
 
-- slider form swiper slider
+
+### Tools used:
+- HTML
+- SCSS
+- Swiper slider
+- Bootstrap
 - jQuery
+
+
+### Includes:
 - beautiful transitions and animations
 - responsive design
 - mobile friendly
